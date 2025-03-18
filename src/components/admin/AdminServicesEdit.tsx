@@ -29,7 +29,7 @@ function AdminServicesEdit() {
       toast({
         title: "Error fetching services",
         description: error.message,
-        variant: "destructive",
+        type: "destructive",
         open: true,
       });
       return;
@@ -57,7 +57,7 @@ function AdminServicesEdit() {
       toast({
         title: "Error saving service",
         description: error.message,
-        variant: "destructive",
+        type: "destructive",
         open: true,
       });
       return;

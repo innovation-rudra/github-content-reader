@@ -14,15 +14,17 @@ type ToasterToast = {
   title?: React.ReactNode
   description?: React.ReactNode
   action?: React.ReactElement
+  type?: "default" | "destructive"
   open: boolean
   onOpenChange?: (open: boolean) => void
 }
 
-export type ToastProps = {
-  variant?: "default" | "destructive"
+export type Toast = {
   title?: React.ReactNode
   description?: React.ReactNode
+  type?: "default" | "destructive"
   action?: React.ReactElement
+  open: boolean
 }
 
 export type ToastActionElement = React.ReactElement
@@ -148,8 +150,6 @@ function dispatch(action: Action) {
     listener(memoryState)
   })
 }
-
-type Toast = Omit<ToasterToast, "id">
 
 function toast({ ...props }: Toast) {
   const id = genId()
