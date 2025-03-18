@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 interface Service {
   id: string;
@@ -13,6 +14,7 @@ function AdminServicesEdit() {
   const [services, setServices] = useState<Service[]>([]);
   const [isEditing, setIsEditing] = useState(false);
   const [currentService, setCurrentService] = useState<Service | null>(null);
+  const { toast } = useToast();
 
   useEffect(() => {
     fetchServices();
@@ -23,7 +25,17 @@ function AdminServicesEdit() {
       .from('services')
       .select('*');
 
-    if (!error && data) {
+    if (error) {
+      toast({
+        title: "Error fetching services",
+        description: error.message,
+        variant: "destructive",
+        open: true,
+      });
+      return;
+    }
+    
+    if (data) {
       setServices(data);
     }
   };
@@ -41,10 +53,24 @@ function AdminServicesEdit() {
         icon_id: currentService.icon_id,
       });
 
-    if (!error) {
-      setIsEditing(false);
-      await fetchServices();
+    if (error) {
+      toast({
+        title: "Error saving service",
+        description: error.message,
+        variant: "destructive",
+        open: true,
+      });
+      return;
     }
+
+    toast({
+      title: "Success!",
+      description: "Service saved successfully",
+      open: true,
+    });
+    
+    setIsEditing(false);
+    await fetchServices();
   };
 
   return (

@@ -1,19 +1,31 @@
 import * as React from "react"
+import { type ClassValue, clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
 
-import type {
-  ToastActionElement,
-  ToastProps,
-} from "@/components/ui/toast"
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
 
 const TOAST_LIMIT = 1
 const TOAST_REMOVE_DELAY = 1000000
 
-type ToasterToast = ToastProps & {
+type ToasterToast = {
   id: string
   title?: React.ReactNode
   description?: React.ReactNode
-  action?: ToastActionElement
+  action?: React.ReactElement
+  open: boolean
+  onOpenChange?: (open: boolean) => void
 }
+
+export type ToastProps = {
+  variant?: "default" | "destructive"
+  title?: React.ReactNode
+  description?: React.ReactNode
+  action?: React.ReactElement
+}
+
+export type ToastActionElement = React.ReactElement
 
 const actionTypes = {
   ADD_TOAST: "ADD_TOAST",
