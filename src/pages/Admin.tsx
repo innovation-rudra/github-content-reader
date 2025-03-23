@@ -17,7 +17,7 @@ function Admin() {
   }
 
   return (
-    <Box className="width-100">
+    <Box sx={{ width: '100%', padding: 2 }}>
       <h1 className="text-3xl font-bold mb-8">Admin Dashboard</h1>
       <Grid container spacing={4}>
         <Grid item xs={12}>
