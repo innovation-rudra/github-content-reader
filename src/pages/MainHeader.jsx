@@ -37,14 +37,14 @@ function MainHeader() {
                         ))}
                     </Box>
 
-                    <Box className="header-right-section div-center display-sm-none">
+                    {/* <Box className="header-right-section div-center display-sm-none">
                         <div className='signin'>
                             Sign In
                         </div>
                         <div className='signup div-center'>
                             Sign Up
                         </div>
-                    </Box>
+                    </Box> */}
                 </Toolbar>
             </Container>
         </AppBar >

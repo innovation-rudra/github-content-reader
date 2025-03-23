@@ -129,6 +129,31 @@
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  position: relative;
+  padding-bottom: 5px;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
+}
+
+.menu-buttons:hover {
+  color: #715DE3;
+}
+
+.menu-buttons::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 3px;
+  background-color: #715DE3;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.menu-buttons:hover::after,
+.menu-buttons.active::after {
+  width: 100%;
 }
 
 .header-right-section {
@@ -138,7 +163,7 @@
 
 .signin {
   color: #FFC700;
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 21.78px;
@@ -153,7 +178,7 @@
   width: 124px;
   height: 50px;
   border-radius: 12px;
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 21.78px;
@@ -211,7 +236,7 @@
   justify-content: space-between;
   padding-bottom: 20px;
   margin: 20px;
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 33px;
@@ -222,18 +247,19 @@
 /* footer end */
 
 .our-sponser {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 54px;
   line-height: 70px;
   letter-spacing: 0%;
   text-align: center;
   color: #1C163C;
+  background-size: 1600px 341px;
   padding-bottom: 20px;
 }
 
 .our-sponser-text {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 32px;
@@ -247,8 +273,10 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  padding-inline: 20px;
-  padding-block: 50px;
+  width: 1206px;
+  height: 229px;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .sponsers-image {
@@ -272,6 +300,10 @@
   flex-direction: column;
   position: relative;
   padding-top: 50px;
+  max-width: 1200px; /* Adjust according to Figma width */
+  margin: 0 auto; /* Centers the content */
+  padding: 0 20px; /* Adds space on left and right */
+
 }
 
 .main-content-text-container-all {
@@ -283,10 +315,11 @@
   text-align: center;
   display: inline;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .main-content-text {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 60px;
   line-height: 90px;
@@ -301,7 +334,7 @@
   padding: 5px 10px;
   margin: 0px 10px;
   border-radius: 16px;
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 60px;
   line-height: 90px;
@@ -311,7 +344,7 @@
 }
 
 .main-content-description {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 34px;
@@ -333,16 +366,21 @@
   width: auto;
   display: flex;
   align-items: center;
-  background: linear-gradient(180deg, #9888F4 0%, #715DE3 100%);
-  color: #fff;
+  background: linear-gradient(135deg, #715DE3, #4C41E6);
+  transition: all 0.3s ease-in-out;  color: #fff;
   padding-inline: 20px;
   border-radius: 12px;
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 21.78px;
   letter-spacing: 0%;
   text-align: center;
+}
+
+.btn-free:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 15px rgba(113, 93, 227, 0.3);
 }
 
 .btn-play {
@@ -354,7 +392,7 @@
   padding-inline: 20px;
   margin-left: 20px;
   border-radius: 12px;
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 21.78px;
@@ -364,7 +402,7 @@
 }
 
 .main-con-desc {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 34px;
@@ -385,7 +423,7 @@
 }
 
 .news-heading {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 600;
   font-size: 45px;
   line-height: 58px;
@@ -396,7 +434,7 @@
 }
 
 .news-description {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 33px;
@@ -418,7 +456,7 @@
 
   input::placeholder {
     color: #ffffff;
-    font-family: Inter;
+    font-family: 'DM Sans', sans-serif;
     font-weight: 500;
     font-size: 18px;
     line-height: 29px;
@@ -429,7 +467,7 @@
 .news-button {
   background: #ffffff;
   color: #715DE3;
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 29px;
@@ -446,11 +484,11 @@
 /* news letter end */
 
 .method-container {
-  padding: 50px 20px 20px 20px;
+  padding: 51px 112px 32px 112px;
 }
 
 .method-heading {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 51px;
   line-height: 62px;
@@ -465,7 +503,7 @@
 }
 
 .method-heading-side {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 29px;
@@ -476,7 +514,7 @@
 }
 
 .method-heading-description {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 29px;
@@ -496,7 +534,7 @@
 }
 
 .best-text {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 600;
   font-size: 24px;
   line-height: 29px;
@@ -505,7 +543,7 @@
 }
 
 .best-description {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 29px;
@@ -533,7 +571,7 @@
 }
 
 .task-card-heading {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 22px;
   line-height: 62px;
@@ -542,7 +580,7 @@
 }
 
 .task-card-description {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 17px;
   line-height: 25px;
@@ -559,7 +597,7 @@
 /* latest work end */
 
 .team-heading-side {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 29px;
@@ -591,7 +629,7 @@
 }
 
 .emp-name {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 600;
   font-size: 20px;
   line-height: 24.2px;
@@ -600,7 +638,7 @@
 }
 
 .emp-degn-name {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 19.36px;
@@ -615,7 +653,7 @@
 }
 
 .review-heading {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 51px;
   line-height: 62px;
@@ -636,7 +674,7 @@
 }
 
 .review-text {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 600;
   font-size: 32px;
   line-height: 45px;
@@ -645,7 +683,7 @@
 }
 
 .review-description {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 33px;
@@ -658,7 +696,7 @@
 }
 
 .review-name {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 600;
   font-size: 20px;
   line-height: 24.2px;
@@ -667,7 +705,7 @@
 }
 
 .review-degn-name {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 19.36px;
@@ -683,7 +721,7 @@
 }
 
 .award-text {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 600;
   font-size: 24px;
   line-height: 45px;
@@ -693,7 +731,7 @@
 }
 
 .award-description {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 27px;
@@ -704,7 +742,7 @@
 }
 
 .award-inner-text {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 19.36px;
@@ -713,7 +751,7 @@
 }
 
 .award-inner-desc {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 19.36px;
@@ -728,7 +766,7 @@
 /* homepage end */
 
 .common-header-link-text {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 21.78px;
@@ -738,7 +776,7 @@
 }
 
 .common-header-text {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 52px;
   line-height: 59px;
@@ -749,7 +787,7 @@
 }
 
 .common-header-description {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 31px;
@@ -769,7 +807,7 @@
 }
 
 .about-description {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 29px;
@@ -792,7 +830,7 @@
 }
 
 .about-company-detail {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 600;
   font-size: 34px;
   line-height: 29px;
@@ -801,7 +839,7 @@
 }
 
 .about-company-detail-text {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 26px;
@@ -834,7 +872,7 @@
   background: #715DE3;
   color: #fff;
   border-radius: 8px;
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
@@ -843,7 +881,7 @@
 }
 
 .plan-text {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 19.36px;
@@ -860,7 +898,7 @@
 }
 
 .plan-text-price {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 800;
   font-size: 36px;
   line-height: 43.57px;
@@ -869,7 +907,7 @@
 }
 
 .plan-text-duration {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 17px;
   line-height: 20.57px;
@@ -879,7 +917,7 @@
 }
 
 .plan-text-desc {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 14.52px;
@@ -890,7 +928,7 @@
 
 .plan-text-detail {
   display: flex;
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 300;
   font-size: 14px;
   line-height: 16px;
@@ -902,7 +940,7 @@
 /* services page end  */
 
 .side-headings {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 22px;
   line-height: 26.63px;
@@ -912,7 +950,7 @@
 }
 
 .blog-card-heading {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 22px;
   line-height: 26.63px;
@@ -921,7 +959,7 @@
 }
 
 .blog-card-description {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 29px;
@@ -932,7 +970,7 @@
 .blog-date {
   background: #ffffff;
   color: #715DE3;
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 24px;
   line-height: 29.05px;
@@ -941,7 +979,7 @@
   border-radius: 5px;
 
   .text-span {
-    font-family: Inter;
+    font-family: 'DM Sans', sans-serif;
     font-weight: 600;
     font-size: 14px;
     line-height: 16.94px;
@@ -956,7 +994,7 @@
   justify-content: center;
   flex-wrap: nowrap;
   flex-direction: row;
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 29px;
@@ -970,7 +1008,7 @@
   justify-content: center;
   flex-wrap: nowrap;
   flex-direction: row;
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 29px;
@@ -986,7 +1024,7 @@
 }
 
 .service-con-description {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 600;
   font-size: 30px;
   line-height: 45px;
@@ -1003,7 +1041,7 @@
   color: #fff;
   padding-inline: 20px;
   border-radius: 12px;
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 29px;
@@ -1091,7 +1129,7 @@
 /* comon cards ends*/
 
 .service-detail-heading {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 40px;
   line-height: 48.41px;
@@ -1100,7 +1138,7 @@
 }
 
 .service-detail-description {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 29px;
@@ -1131,7 +1169,7 @@
   color: #7F7A9A;
   padding: 5px 12px;
   margin: 6px 6px;
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 15px;
   line-height: 29px;
@@ -1141,7 +1179,7 @@
 /* side menus */
 
 .faq-headings {
-  font-family: Inter;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 51px;
   line-height: 62px;
@@ -1188,10 +1226,10 @@
   }
 
   .main-content-text {
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 60px;
-    color: #1C163C;
+    font-weight: 800;
+  font-size: 64px;
+  line-height: 1.2;
+  letter-spacing: -1px;
   }
 
   .main-content-span {
